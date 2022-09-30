@@ -1,10 +1,9 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.project_name }} ![image info](./pictures/logo.png) 
 
-[![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}?style=flat-square)](https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug}}?style=flat-square)](https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/)
-[![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.project_slug }}?style=flat-square)](https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/)
-[![Coookiecutter - Wolt](https://img.shields.io/badge/cookiecutter-Wolt-00c2e8?style=flat-square&logo=cookiecutter&logoColor=D4AA00&link=https://github.com/woltapp/wolt-python-package-cookiecutter)](https://github.com/woltapp/wolt-python-package-cookiecutter)
-
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Pylint](./.github/badges/pylint-badge.svg?dummy=8484744)
+![Coverage Status](./.github/badges/coverage-badge.svg?dummy=8484744)
+![Last Commit Date](./.github/badges/last-commit-badge.svg?dummy=8484744)
 
 ---
 
