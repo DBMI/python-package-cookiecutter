@@ -8,11 +8,9 @@
 
 ---
 
-**Documentation**: [https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug}}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug}})
+**Documentation**: [https://github.com/DBMI/{{ cookiecutter.project_slug}}](https://github.com/DBMI/{{ cookiecutter.project_slug}})
 
-**Source Code**: [https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
-
-**PyPI**: [https://pypi.org/project/{{ cookiecutter.project_slug }}/](https://pypi.org/project/{{ cookiecutter.project_slug }}/)
+**Source Code**: [https://github.com/DBMI/{{ cookiecutter.project_slug }}](https://github.com/DBMI/{{ cookiecutter.project_slug }})
 
 ---
 
