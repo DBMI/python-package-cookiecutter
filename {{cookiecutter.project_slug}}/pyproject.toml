@@ -8,9 +8,9 @@ authors = [
 license = "MIT"
 readme = "README.md"
 
-documentation = "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}"
-homepage = "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}"
-repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
+documentation = "https://github.com/DBMI/{{ cookiecutter.project_slug }}"
+homepage = "https://github.com/DBMI/{{ cookiecutter.project_slug }}"
+repository = "https://github.com/DBMI/{{ cookiecutter.project_slug }}"
 
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -43,6 +43,8 @@ flake8-debugger = "*"
 flake8-eradicate = "*"
 flake8-logging-format = "*"
 isort = "*"
+make = "*"
+mkdocs = "*"
 mkdocstrings = "*"
 mkdocs-material = "*"
 mypy = "*"
@@ -54,7 +56,11 @@ pytest-github-actions-annotate-failures = "*"
 pytest-cov = "*"
 python-kacl = "*"
 pyupgrade = "*"
+sphinx = "*"
+sphinx_markdown_builder = "*"
 tryceratops = "*"
+typing = "*"
+wheel = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
