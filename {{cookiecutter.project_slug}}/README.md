@@ -18,7 +18,7 @@
 ## Installation
 
 ```sh
-pip install {{ cookiecutter.project_slug }}
+pip install git+https://github.com/DBMI/{{ cookiecutter.project_slug }}.git
 ```
 
 ## Development
