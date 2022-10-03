@@ -1,23 +1,10 @@
-# Wolt Python Package Cookiecutter
+# DBMI Python Package Cookiecutter
 
 A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included.
 
 ![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
 
-## Example projects which use Wolt Python Package Cookiecutter
-* [jerry-git/pytest-split](https://github.com/jerry-git/pytest-split)
-
 ## Features
-
-#### Automatic updates to the projects generated from this cookiecutter
-
-* Powered by [cruft](https://cruft.github.io/cruft/)
-* Keep your project up-to-date with best practices
-
-#### Continuous integration
-
-* Powered by [Github Actions](https://github.com/features/actions)
-* Testing against multiple different versions
 
 #### Documentation
 
@@ -26,10 +13,6 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 * Auto-generated API documentation from docstrings via [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings)
 * See the extensive list of [MkDocs plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins) which can help you
  to tune the documentation to fit your project's needs
-
-#### Automated releases
-
-* Publishing to [PyPI](https://pypi.org/) when a release is made in GitHub
 
 #### Changelog management
 
@@ -55,14 +38,12 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 
 ## Usage
 
-Make sure you have [`cruft`](https://github.com/cruft/cruft#installation) installed. Alternatively, you can use
- [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/installation.html) if you are not interested in
-  getting updates to the project "boilerplate" in the future.
+Make sure you have [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/installation.html).
 
 Create a new project:
 
 ```sh
-cruft create https://github.com/woltapp/wolt-python-package-cookiecutter
+cookiecutter https://github.com/DBMI/python-package-cookiecutter
 ```
 
 The CLI interface will ask some basic questions, such the name of the project, and then generate all the goodies
@@ -76,33 +57,6 @@ git init
 git add .
 git commit -m "Initial project structure from Wolt Python Package cookiecutter"
 ```
-
-We update this cookiecutter template regularly to keep it up-to-date with the best practices of the Python world. You
- can get the updates into your project with:
-
-```sh
-cruft update
-```
-
-### Configure secrets
-
-#### `PYPI_TOKEN`
-
-Required for publishing the package to [PyPI](https://pypi.org/). You can generate a token by logging into PyPI and
- navigating to _Add API token_ in your [account settings](https://pypi.org/manage/account/).
-
-#### `AUTO_UPDATE_GITHUB_TOKEN`
-
-This cookiecutter template comes with an auto update feature if the project was created using cruft.
-A GitHub action automatically checks for updates and creates a pull request.
-
-Generate [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-and use it as the value for `AUTO_UPDATE_GITHUB_TOKEN` secret. When creating the access token, the following
- permissions have to be granted
-
-* repo
-* workflow
-
 ### After the first release
 
 The first release will create `gh-pages` branch which will contain the static files for the documentation. Enable GitHub
