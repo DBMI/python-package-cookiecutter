@@ -9,6 +9,8 @@ git init
 git add .
 git commit -m "Initial repo" --no-verify
 
+read -p "Press any key."
+
 # Is GitHub Command Line Interface (CLI) installed?
 if gh --version | grep -q 'version'
 then
@@ -21,9 +23,13 @@ else
   exit 1
 fi
 
+read -p "Press any key."
+
 # Push initial code.
 echo "Pushing initial code."
 git push -u origin main
+
+read -p "Press any key."
 
 # Initialize GitHub pages.
 echo "Creating GitHub pages repo."
@@ -33,3 +39,5 @@ git reset --hard
 git commit --allow-empty -m "Init" --no-verify
 git checkout develop
 git worktree add html gh-pages
+
+read -p "Press any key."
