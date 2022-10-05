@@ -8,16 +8,21 @@ cd ..
 git init
 git add .
 git commit -m "Initial repo" --no-verify
+git branch -M main
 
 read -p "Press any key."
 
 # Is GitHub Command Line Interface (CLI) installed?
 if gh --version | grep -q 'version'
 then
-  echo "Creating remote repo."
-
   # Create remote repo using GitHub Command Line Interface.
-  gh repo create DBMI/{{cookiecutter.project_slug}} --source=. --private
+  repo_name = "DBMI/{{ cookiecutter.project_slug }}"
+  echo "Creating remote repo ${repo_name}."
+  gh repo create repo_name --source=. --private
+  
+  git_name = "https://github.com/${repo_name}.git"
+  echo "Setting ${git_name} as remote origin."
+  git remote add origin git_name
 else
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
   exit 1
