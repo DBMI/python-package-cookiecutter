@@ -16,11 +16,11 @@ read -p "Press any key."
 if gh --version | grep -q 'version'
 then
   # Create remote repo using GitHub Command Line Interface.
-  repo_name = "DBMI/{{ cookiecutter.project_slug }}"
+  repo_name="DBMI/{{ cookiecutter.project_slug }}"
   echo "Creating remote repo ${repo_name}."
   gh repo create repo_name --source=. --private
   
-  git_name = "https://github.com/${repo_name}.git"
+  git_name="https://github.com/${repo_name}.git"
   echo "Setting ${git_name} as remote origin."
   git remote add origin git_name
 else
