@@ -22,7 +22,7 @@ then
   
   git_name="https://github.com/${repo_name}.git"
   echo "Setting ${git_name} as remote origin."
-  git remote add origin git_name
+  git remote add origin ${git_name}
 else
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
   exit 1
