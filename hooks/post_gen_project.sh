@@ -17,7 +17,7 @@ then
   echo "Creating remote repo."
 
   # Create remote repo using GitHub Command Line Interface.
-  gh repo create DBMI/{{cookiecutter.project_name}} --source=. --private
+  gh repo create DBMI/{{cookiecutter.project_slug}} --source=. --private
 else
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
   exit 1
