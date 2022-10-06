@@ -48,7 +48,6 @@ echo "*******************************************"
 echo "*      Creating GitHub pages repo.        *"
 echo "*******************************************"
 cd docs/build
-mkdir html
 git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m "Initialize" --no-verify
