@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Initialize documentation.
 cd docs
 pip install sphinx
