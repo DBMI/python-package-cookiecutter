@@ -1,12 +1,17 @@
 #!/bin/sh
 
 # Initialize documentation.
+echo "*******************************************"
+echo "* Initializing documentation with sphinx. *"
+echo "*******************************************"
 cd docs
 pip install sphinx
 sphinx-quickstart --quiet -p "{{ cookiecutter.project_slug }}" -a "{{ cookiecutter.author_name }}" -v 0.0.1
 
 # Initialize as git local repo.
-echo "Creating local repo."
+echo "*******************************************"
+echo "*          Creating local repo.           *"
+echo "*******************************************"
 cd ..
 git init
 git add .
@@ -18,24 +23,30 @@ if gh --version | grep -q 'version'
 then
   # Create remote repo using GitHub Command Line Interface.
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
+  echo "*******************************************"
   echo "Creating remote repo ${repo_name}."
+  echo "*******************************************"
   sleep 2.5s
   gh repo create ${repo_name} --source=. --private --remote=upstream
 else
+  echo "*******************************************"
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
+  echo "*******************************************"
   read -p 'Exiting. Press any key.'
   exit 1
 fi
 
 # Push initial code.
-echo "Pushing local code to remote repo."
+echo "*******************************************"
+echo "*   Pushing local code to remote repo.    *"
+echo "*******************************************"
 sleep 2.5s
 git push -u upstream main
 
-read -p 'Ready to create GitHub pages. Press any key.'
-
 # Initialize GitHub pages.
-echo "Creating GitHub pages repo."
+echo "*******************************************"
+echo "*      Creating GitHub pages repo.        *"
+echo "*******************************************"
 cd docs/build
 mkdir html
 git checkout --orphan gh-pages
@@ -48,6 +59,13 @@ cd html
 git add --all
 git commit --allow-empty -m "Initialize GitHub pages" --no-verify
 git push upstream gh-pages
-git checkout develop
+
+# Create develop branch in the remote repo.
 git pull
-read -p 'Project setup complete. Press any key.'
+git push upstream develop:develop
+
+echo "*******************************************"
+echo "*       Project setup complete.           *"
+echo "*******************************************"
+read -p 'Press any key.'
+
