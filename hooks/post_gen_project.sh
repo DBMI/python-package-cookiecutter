@@ -1,5 +1,6 @@
 # Initialize documentation.
 cd docs
+pip install sphinx
 sphinx-quickstart --quiet -p {{ cookiecutter.project_slug }} -a {{ cookiecutter.author_name }} -v 0.0.1
 
 # Initialize as git local repo.
@@ -13,8 +14,7 @@ git branch -M main
 read -p "Press any key."
 
 # Is GitHub Command Line Interface (CLI) installed?
-if gh --version | grep -q 'version'
-then
+if gh --version | grep -q 'version' then
   # Create remote repo using GitHub Command Line Interface.
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
   echo "Creating remote repo ${repo_name}."
