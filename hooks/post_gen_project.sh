@@ -20,11 +20,7 @@ then
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
   echo "Creating remote repo ${repo_name}."
   sleep 2.5s
-  gh repo create ${repo_name} --source=. --private
-  
-  git_name="https://github.com/${repo_name}.git"
-  echo "Setting ${git_name} as remote origin."
-  git remote add origin ${git_name}
+  gh repo create ${repo_name} --source=. --private --remote=upstream
 else
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
   read -p 'Exiting. Press any key.'
@@ -34,13 +30,17 @@ fi
 # Push initial code.
 echo "Pushing local code to remote repo."
 sleep 2.5s
-git push -u origin main
+git push -u upstream main
 
 read -p 'Ready to create GitHub pages. Press any key.'
 
 # Initialize GitHub pages.
 echo "Creating GitHub pages repo."
 cd docs/build
+mkdir html
+cd html
+touch empty.html
+cd ..
 echo "About to checkout gh-pages branch."
 git checkout --orphan gh-pages
 echo "About to reset."
@@ -49,6 +49,10 @@ echo "About to commit to gh-pages."
 git commit --allow-empty -m "Init" --no-verify
 echo "About to checkout develop branch."
 git checkout -b develop
-# git worktree add html gh-pages
+rm -rf html
+git worktree add html gh-pages
+cd html
+git commit --allow-empty -m "Initialize GitHub pages" --no-verify
+git push upstream gh-pages
 
 read -p 'Project setup complete. Press any key.'
