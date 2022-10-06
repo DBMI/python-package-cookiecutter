@@ -14,6 +14,7 @@ git commit -m "Initial repo" --no-verify
 git branch -M main
 
 read -p 'Ready to create remote repo. Press any key.' input_key
+read -p 'I see what you did there.' input_key
 
 # Is GitHub Command Line Interface (CLI) installed?
 if gh --version | grep -q 'version' then
