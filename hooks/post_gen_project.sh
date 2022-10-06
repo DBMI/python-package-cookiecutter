@@ -1,7 +1,7 @@
 # Initialize documentation.
 cd docs
 pip install sphinx
-sphinx-quickstart --quiet -p {{ cookiecutter.project_slug }} -a {{ cookiecutter.author_name }} -v 0.0.1
+sphinx-quickstart --quiet -p "{{ cookiecutter.project_slug }}" -a "{{ cookiecutter.author_name }}" -v 0.0.1
 
 # Initialize as git local repo.
 echo "Creating local repo."
