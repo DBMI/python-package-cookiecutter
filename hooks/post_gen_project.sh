@@ -12,7 +12,6 @@ git init
 git add .
 git commit -m "Initial repo" --no-verify
 git branch -M main
-sleep 2.5s
 
 # Is GitHub Command Line Interface (CLI) installed?
 if gh --version | grep -q 'version' 
@@ -20,6 +19,7 @@ then
   # Create remote repo using GitHub Command Line Interface.
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
   echo "Creating remote repo ${repo_name}."
+  sleep 2.5s
   gh repo create ${repo_name} --source=. --private
   
   git_name="https://github.com/${repo_name}.git"
@@ -31,10 +31,9 @@ else
   exit 1
 fi
 
-sleep 2.5s
-
 # Push initial code.
 echo "Pushing local code to remote repo."
+sleep 2.5s
 git push -u origin main
 
 read -p 'Ready to create GitHub pages. Press any key.'
