@@ -14,10 +14,10 @@ git commit -m "Initial repo" --no-verify
 git branch -M main
 
 read -p 'Ready to create remote repo. Press any key.' input_key
-read -p 'I see what you did there.' input_key
 
 # Is GitHub Command Line Interface (CLI) installed?
-if gh --version | grep -q 'version' then
+if gh --version | grep -q 'version' 
+then
   echo "Forming repo name."
   # Create remote repo using GitHub Command Line Interface.
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
