@@ -41,7 +41,7 @@ mkdir html
 git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m "Initialize" --no-verify
-git checkout -b develop
+git checkout -b develop main
 rm -rf html
 git worktree add html gh-pages
 cd html
