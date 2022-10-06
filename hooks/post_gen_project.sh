@@ -12,6 +12,7 @@ git init
 git add .
 git commit -m "Initial repo" --no-verify
 git branch -M main
+sleep 2.5s
 
 # Is GitHub Command Line Interface (CLI) installed?
 if gh --version | grep -q 'version' 
@@ -30,10 +31,10 @@ else
   exit 1
 fi
 
-read -p 'Ready to push code to remote repo. Press any key.'
+sleep 2.5s
 
 # Push initial code.
-echo "Pushing initial code."
+echo "Pushing local code to remote repo."
 git push -u origin main
 
 read -p 'Ready to create GitHub pages. Press any key.'
@@ -41,10 +42,14 @@ read -p 'Ready to create GitHub pages. Press any key.'
 # Initialize GitHub pages.
 echo "Creating GitHub pages repo."
 cd docs/build
+echo "About to checkout gh-pages branch."
 git checkout --orphan gh-pages
+echo "About to reset."
 git reset --hard
+echo "About to commit to gh-pages."
 git commit --allow-empty -m "Init" --no-verify
+echo "About to checkout develop branch."
 git checkout -b develop
-git worktree add html gh-pages
+# git worktree add html gh-pages
 
 read -p 'Project setup complete. Press any key.'
