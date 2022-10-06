@@ -38,21 +38,16 @@ read -p 'Ready to create GitHub pages. Press any key.'
 echo "Creating GitHub pages repo."
 cd docs/build
 mkdir html
-cd html
-touch empty.html
-cd ..
-echo "About to checkout gh-pages branch."
 git checkout --orphan gh-pages
-echo "About to reset."
 git reset --hard
-echo "About to commit to gh-pages."
-git commit --allow-empty -m "Init" --no-verify
-echo "About to checkout develop branch."
+git commit --allow-empty -m "Initialize" --no-verify
 git checkout -b develop
 rm -rf html
 git worktree add html gh-pages
 cd html
+git add --all
 git commit --allow-empty -m "Initialize GitHub pages" --no-verify
 git push upstream gh-pages
-
+git checkout develop
+git pull
 read -p 'Project setup complete. Press any key.'
