@@ -60,6 +60,7 @@ git commit --allow-empty -m "Initialize GitHub pages" --no-verify
 git push upstream gh-pages
 
 # Create develop branch in the remote repo.
+cd ../..
 git pull
 git push upstream develop:develop
 
