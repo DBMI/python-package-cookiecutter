@@ -1,17 +1,25 @@
 #!/bin/sh
 
 # Initialize documentation.
-echo "*******************************************"
-echo "* Initializing documentation with sphinx. *"
-echo "*******************************************"
+echo "**********************************************"
+echo "*  Initializing documentation with sphinx.   *"
+echo "**********************************************"
 cd docs
 pip install sphinx
 sphinx-quickstart --quiet -p "{{ cookiecutter.project_slug }}" -a "{{ cookiecutter.author_name }}" -v 0.0.1
 
+# Mark the last-commit badge with today's date.
+echo "**********************************************"
+echo "* Setting today's date on last-commit badge. *"
+echo "**********************************************"
+pip install anybadge
+TODAY=$(date +"%B %d, %Y")
+anybadge -l "last commit" -v "$TODAY" --overwrite --file .\\.github\\badges\\last-commit-badge.svg
+
 # Initialize as git local repo.
-echo "*******************************************"
-echo "*          Creating local repo.           *"
-echo "*******************************************"
+echo "**********************************************"
+echo "*            Creating local repo.            *"
+echo "**********************************************"
 cd ..
 git init
 git add .
@@ -23,32 +31,32 @@ if gh --version | grep -q 'version'
 then
   # Create remote repo using GitHub Command Line Interface.
   repo_name="DBMI/{{ cookiecutter.project_slug }}"
-  echo "*******************************************"
+  echo "**********************************************"
   echo "Creating remote repo ${repo_name}."
-  echo "*******************************************"
+  echo "**********************************************"
   sleep 2.5s
   gh repo create ${repo_name} --source=. --private --remote=upstream
   # Have local repo track the remote.
   git remote add origin ${repo_name}
 else
-  echo "*******************************************"
+  echo "**********************************************"
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
-  echo "*******************************************"
+  echo "**********************************************"
   read -p 'Exiting. Press any key.'
   exit 1
 fi
 
 # Push initial code.
-echo "*******************************************"
-echo "*   Pushing local code to remote repo.    *"
-echo "*******************************************"
+echo "**********************************************"
+echo "*     Pushing local code to remote repo.     *"
+echo "**********************************************"
 sleep 2.5s
 git push -u upstream main
 
 # Initialize GitHub pages.
-echo "*******************************************"
-echo "*      Creating GitHub pages repo.        *"
-echo "*******************************************"
+echo "**********************************************"
+echo "*        Creating GitHub pages repo.         *"
+echo "**********************************************"
 cd docs/build
 git checkout --orphan gh-pages
 git reset --hard
@@ -66,8 +74,8 @@ cd ../..
 git pull
 git push upstream develop:develop
 
-echo "*******************************************"
-echo "*       Project setup complete.           *"
-echo "*******************************************"
+echo "**********************************************"
+echo "*          Project setup complete.           *"
+echo "**********************************************"
 read -p 'Press any key.'
 
