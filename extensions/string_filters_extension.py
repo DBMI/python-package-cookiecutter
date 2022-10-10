@@ -9,7 +9,7 @@ def email_from_author(author):
     :return: email
     ex {{ "Alpha B. Charlie" | email_from_author }} --> "abcharlie"
     """
-    print(author.filters)
+    print(author.to_string)
     """author_despaced = author.replace(' ', '')
     author_depunctuated = author_despaced.replace('.', '')
     email_address = re.sub(r'[a-z]*([A-Z])', '\\1', author_depunctuated)
