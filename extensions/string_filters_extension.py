@@ -1,4 +1,5 @@
 from jinja2.ext import Extension
+from jinja2.filters import environmentfilter
 import re
 
 
