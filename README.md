@@ -1,9 +1,6 @@
 # DBMI Python Package Cookiecutter
 
-A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included.
-
-![Demo](https://github.com/woltapp/wolt-python-package-cookiecutter/raw/master/demo.gif)
-
+A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included. Automatically created the structure needed for a project.
 ## Features
 
 #### Documentation
@@ -33,31 +30,18 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 
 #### Automation
 
-* Updates to the best practices (via GHA workflow which runs `cruft update` and creates a PR)
 * Dependency updates (via GHA workflow which creates a PR)
 
 ## Usage
 
-Make sure you have [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/installation.html).
+1. Make sure you have [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/installation.html).
+2. Install github's command line package [gh](https://cli.github.com/).
 
 Create a new project:
 
-```sh
+```
 cookiecutter https://github.com/DBMI/python-package-cookiecutter
 ```
 
 The CLI interface will ask some basic questions, such the name of the project, and then generate all the goodies
- automatically.
-
-After that you can make it a proper git repo:
-
-```sh
-cd <your-project-slug>
-git init
-git add .
-git commit -m "Initial project structure from Wolt Python Package cookiecutter"
-```
-### After the first release
-
-The first release will create `gh-pages` branch which will contain the static files for the documentation. Enable GitHub
- Pages in the _Pages_ section of the repository settings.
+ automatically and creates the git repo, both locally and remotely (using [gh](https://cli.github.com/))
