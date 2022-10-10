@@ -75,13 +75,9 @@ echo "**********************************************"
 echo "*  Creating develop branch in remote repo.   *"
 echo "**********************************************"
 sleep 2.5s
-cd ../..
-pwd
-read -p 'Press any key.'
+cd ../../..
 git pull upstream main
-read -p 'Press any key.'
 git push upstream develop:develop
-read -p 'Press any key.'
 
 echo "**********************************************"
 echo "*          Project setup complete.           *"
