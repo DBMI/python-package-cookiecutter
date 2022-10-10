@@ -1,9 +1,7 @@
 from jinja2.ext import Extension
-from jinja2.filters import environmentfilter
 import re
 
 
-@environmentfilter
 def email_from_author(environment, author: str) -> str:
     """
     Converts an author's name into an email address.
