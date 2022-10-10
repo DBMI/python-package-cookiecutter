@@ -1,9 +1,9 @@
 {
     "author_name": "Your name",
-    "author_email": "{{cookiecutter.author_name | upper_case_first_letter }}",
+    "author_email": "{{cookiecutter.author_name | email_from_author }}",
     "project_name": "Name of the project (will be shown as the title in the readme)",
     "project_slug": "{{ cookiecutter.project_name.replace(' ', '') }}",
     "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "project_short_description": "A short description of the project",
-    "_extensions": ["extensions.string_filters_extension.upper_case_first_letter"]
+    "_extensions": ["extensions.string_filters_extension.email_from_author"]
 }
