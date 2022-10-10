@@ -1,6 +1,6 @@
 {
     "author_name": "Your name",
-    "author_email": "{{cookiecutter.author_name.replace('.', '').replace(' ', '')).lower() + '@ucsd.edu'}}",
+    "author_email": "{{cookiecutter.author_name.replace('.', '').replace(' ', '').lower() + '@ucsd.edu'}}",
     "project_name": "Name of the project (will be shown as the title in the readme)",
     "project_slug": "{{% cookiecutter.project_name | slugify %}}",
     "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
