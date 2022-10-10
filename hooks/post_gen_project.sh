@@ -7,6 +7,7 @@ echo "**********************************************"
 cd docs
 pip install sphinx
 sphinx-quickstart --quiet -p "{{ cookiecutter.project_slug }}" -a "{{ cookiecutter.author_name }}" -v 0.0.1
+cd ..
 
 # Mark the last-commit badge with today's date.
 echo "**********************************************"
@@ -21,7 +22,6 @@ read -p 'Press any key.'
 echo "**********************************************"
 echo "*            Creating local repo.            *"
 echo "**********************************************"
-cd ..
 git init
 git add .
 git commit -m "Initial repo" --no-verify
