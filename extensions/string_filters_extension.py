@@ -41,7 +41,7 @@ def slug(value):
     return value.lower().replace(" ", "-")
 
 
-class StringFilterExtension(Extension):
+class StringFilterExtension(Extension):    
     def __init__(self, environment):
         super(StringFilterExtension, self).__init__(environment)
 
