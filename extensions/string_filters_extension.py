@@ -2,7 +2,7 @@ from jinja2.ext import Extension
 import re
 
 
-def email_from_author(environment, author: str) -> str:
+def email_from_author(author):
     """
     Converts an author's name into an email address.
     :param author: author's name
