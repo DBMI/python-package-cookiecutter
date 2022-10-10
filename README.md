@@ -1,6 +1,10 @@
 # DBMI Python Package Cookiecutter
 
-A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included. Automatically created the structure needed for a project.
+A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (project template) for rapidly developing new open source Python packages. Best practices with all the modern bells and whistles included. Automatically creates the project's:
+* directory structure
+* local git repo
+* remote git repo
+* GitHub pages repo.
 ## Features
 
 #### Documentation
