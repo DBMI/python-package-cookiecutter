@@ -28,6 +28,8 @@ then
   echo "*******************************************"
   sleep 2.5s
   gh repo create ${repo_name} --source=. --private --remote=upstream
+  # Have local repo track the remote.
+  git remote add origin ${repo_name}
 else
   echo "*******************************************"
   echo "Need to install GitHub Command Line Interface from https://github.com/cli/cli"
