@@ -16,7 +16,6 @@ echo "**********************************************"
 pip install anybadge
 TODAY=$(date +"%B %d, %Y")
 anybadge -l "last commit" -v "$TODAY" --overwrite --file .\\.github\\badges\\last-commit-badge.svg
-read -p 'Press any key.'
 
 # Initialize as git local repo.
 echo "**********************************************"
@@ -58,6 +57,7 @@ git push -u upstream main
 echo "**********************************************"
 echo "*        Creating GitHub pages repo.         *"
 echo "**********************************************"
+sleep 2.5s
 cd docs/build
 git checkout --orphan gh-pages
 git reset --hard
@@ -71,9 +71,17 @@ git commit --allow-empty -m "Initialize GitHub pages" --no-verify
 git push upstream gh-pages
 
 # Create develop branch in the remote repo.
+echo "**********************************************"
+echo "*  Creating develop branch in remote repo.   *"
+echo "**********************************************"
+sleep 2.5s
 cd ../..
-git pull
+pwd
+read -p 'Press any key.'
+git pull upstream main
+read -p 'Press any key.'
 git push upstream develop:develop
+read -p 'Press any key.'
 
 echo "**********************************************"
 echo "*          Project setup complete.           *"
