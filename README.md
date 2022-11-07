@@ -40,7 +40,10 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html) (pro
 
 1. Make sure you have [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/installation.html).
 2. Install github's command line package [gh](https://cli.github.com/).
-3. pip install git+https://github.com/DBMI/jinja2_custom_filters_extension.git
+
+3. ```
+pip install jinja2_custom_filters_extension
+```
 
 Create a new project:
 
