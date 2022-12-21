@@ -76,11 +76,10 @@ include = '\.pyi?$'
 
 [tool.pytest.ini_options]
 addopts = """\
-    --cov {{ cookiecutter.package_name }} \
-    --cov tests \
     --cov-report term-missing \
     --no-cov-on-fail \
 """
+testpaths = ["{{ cookiecutter.package_name }}"]
 
 [tool.coverage.report]
 fail_under = 100
