@@ -46,6 +46,14 @@ else
   exit 1
 fi
 
+# Link this project to this cookiecutter 'template'.
+# (This creates the .cruft.json file.)
+echo "**********************************************"
+echo "* Linking project to cookiecutter template.  *"
+echo "**********************************************"
+sleep 2.5s
+cruft link https://github.com/DBMI/python-package-cookiecutter
+
 # Push initial code.
 echo "**********************************************"
 echo "*     Pushing local code to remote repo.     *"
