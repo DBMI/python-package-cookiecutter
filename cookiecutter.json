@@ -5,5 +5,5 @@
     "project_slug": "{{ cookiecutter.project_name.replace(' ', '') }}",
     "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "project_short_description": "A short description of the project",
-    "_extensions": ["local_extensions.email_from_author"]
+    "_extensions": ["local_extensions:email_from_author"]
 }
