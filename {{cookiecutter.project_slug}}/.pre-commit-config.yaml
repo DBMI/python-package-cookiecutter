@@ -1,6 +1,6 @@
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.4.0
     hooks:
       - id: check-ast
       - id: check-added-large-files
@@ -11,23 +11,28 @@ repos:
       - id: check-yaml
       - id: debug-statements
       - id: end-of-file-fixer
+        files: "py$"
       - id: trailing-whitespace
+        files: "py$"
       - id: mixed-line-ending
 -   repo: local
     hooks:
       - id: autoflake
         name: autoflake
         entry: poetry run autoflake -r --remove-all-unused-imports --remove-unused-variables src/{{ cookiecutter.project_slug }}
+        files: "py$"
         language: system
         types: [ python ]
       - id: isort
         name: isort
         entry: poetry run isort src/{{ cookiecutter.project_slug }}
+        files: "py$"
         language: system
         types: [python]
       - id: black
         name: black
         entry: poetry run black src/{{ cookiecutter.project_slug }}
+        files: "py$"
         language: system
         types: [python]
       - id: pyupgrade
@@ -39,6 +44,7 @@ repos:
         name: mypy
         entry: poetry run mypy src/{{ cookiecutter.project_slug }}
         require_serial: true
+        files: "py$"
         language: system
         types: [python]
         pass_filenames: false
@@ -46,6 +52,8 @@ repos:
       - id: flake8
         name: flake8
         entry: poetry run flake8 src/{{ cookiecutter.project_slug }}
+        exclude: "tests"
+        files: "py$"
         language: system
         types: [python]
       - id: kacl-verify
