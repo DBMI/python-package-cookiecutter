@@ -37,7 +37,7 @@ repos:
         types: [python]
       - id: mypy
         name: mypy
-        entry: poetry run mypy {{ cookiecutter.project_slug }}
+        entry: poetry run mypy src/{{ cookiecutter.project_slug }}
         require_serial: true
         language: system
         types: [python]
@@ -45,7 +45,7 @@ repos:
         additional_dependencies: ["mypy==0.812"]
       - id: flake8
         name: flake8
-        entry: poetry run flake8 {{ cookiecutter.project_slug }}
+        entry: poetry run flake8 src/{{ cookiecutter.project_slug }}
         language: system
         types: [python]
       - id: kacl-verify
