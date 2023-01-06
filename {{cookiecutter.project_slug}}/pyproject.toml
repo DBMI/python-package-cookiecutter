@@ -1,3 +1,35 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ["py37", "py38", "py39"]
+include = '\.pyi?$'
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = [
+    'if TYPE_CHECKING:',
+    'pragma: no cover'
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
+[tool.mypy]
+disallow_any_unimported = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+check_untyped_defs = true
+show_error_codes = true
+ignore_missing_imports = true
+disable_error_code = ["call-arg", "call-overload", "var-annotated"]
+
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
 version = "0.0.1"
@@ -62,17 +94,8 @@ tryceratops = "*"
 typing = "*"
 wheel = "*"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.isort]
-profile = "black"
-src_paths = ["src", "tests"]
-
-[tool.black]
-target-version = ["py37", "py38", "py39"]
-include = '\.pyi?$'
+[tool.pylint.format]
+max-line-length="88"
 
 [tool.pytest.ini_options]
 addopts = """\
@@ -80,23 +103,3 @@ addopts = """\
     --no-cov-on-fail \
 """
 testpaths = ["{{ cookiecutter.package_name }}"]
-
-[tool.coverage.report]
-fail_under = 100
-exclude_lines = [
-    'if TYPE_CHECKING:',
-    'pragma: no cover'
-]
-
-[tool.mypy]
-disallow_any_unimported = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-strict_equality = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_return_any = true
-check_untyped_defs = true
-show_error_codes = true
-ignore_missing_imports = true
-disable_error_code = ["call-arg", "call-overload", "var-annotated"]
