@@ -102,4 +102,5 @@ addopts = """\
     --cov-report term-missing \
     --no-cov-on-fail \
 """
+pythonpath = [".", "src"]
 testpaths = ["{{ cookiecutter.package_name }}"]
