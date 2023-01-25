@@ -1,7 +1,6 @@
 # {{ cookiecutter.project_name }} ![image info](./pictures/logo.png) 
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![Pylint](./.github/badges/pylint-badge.svg?dummy=8484744)
 ![Coverage Status](./.github/badges/coverage-badge.svg?dummy=8484744)
 ![Last Commit Date](./.github/badges/last-commit-badge.svg?dummy=8484744)
 
