@@ -45,7 +45,7 @@ repos:
         entry: poetry run mypy src/{{ cookiecutter.project_slug }}
         require_serial: true
         files: "py$"
-        language: system
+        language: python
         types: [python]
         pass_filenames: false
         additional_dependencies: ["mypy==0.812"]
